@@ -1,0 +1,156 @@
+.product-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  margin: 15px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+.badge {
+  background: #E6005C;
+  padding: 6px 12px;
+  height: 15px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.avaibletext {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+}
+.whatsapp-button.multi {
+  background-color: #E6005C;
+}
+
+.cont {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 10px;
+  display: flex;}
+
+.select-button {
+  background: transparent;
+  border: 2px solid #E6005C;
+  color: #E6005C;
+  padding: 8px 14px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+  width: 80%;
+}
+
+.select-button:hover {
+  background: #ffe6f0;
+}
+
+.select-button.selected {
+  background: #E6005C;
+  color: white;
+  box-shadow: 0 4px 10px rgba(230, 0, 92, 0.3);
+}
+
+.select-button.selected:hover {
+  background: #c4004f;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+.product-card .avaibletext {
+  color: #fff;
+}
+
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease;
+}
+
+.product-card h3 {
+  margin: 15px 0 10px;
+  color: #e75480;
+  font-size: 1.2em;
+  padding: 0 10px;
+  min-height: 50px;
+}
+
+.product-card p {
+  color: #666;
+  font-size: 0.9em;
+  padding: 0 15px 15px;
+  min-height: 60px;
+}
+
+.price {
+  display: block;
+  font-weight: bold;
+  color: #e75480;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+.whatsapp-button {
+  background-color: #25D366;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 80%;
+  margin: 0 auto 15px;
+  transition: background-color 0.3s;
+}
+
+.whatsapp-button:hover {
+  background-color: #128C7E;
+}
+
+.whatsapp-icon {
+  font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+  .image-container {
+      height: 250px;
+  }
+  
+  .product-card h3 {
+      font-size: 1em;
+      min-height: 40px;
+  }
+  
+  .product-card p {
+      font-size: 0.8em;
+      min-height: 50px;
+  }
+  
+  .whatsapp-button {
+      padding: 8px 12px;
+      font-size: 0.9em;
+  }
+}
