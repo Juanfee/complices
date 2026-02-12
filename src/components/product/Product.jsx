@@ -31,7 +31,10 @@ const Product = () => {
           <ProductCard key={product.id} product={product} />
         ))
       ) : (
-        <p>No se encontraron productos</p>
+       <div className="no-products">
+          <h2>No hay productos disponibles</h2>
+          <p> Realiza otra búsqueda 😉</p>
+        </div>
       )}
     </div>
   );

@@ -1,21 +1,23 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import ProductCard from '../productCard/ProductCard';
 import './Products.css';
 import { getProducts } from '../../services/productService';
 
 const Products = () => {
-  const [category, setCategory] = React.useState("all");
+  const [category, setCategory] = useState("all");
   const [products, setProducts] = useState([]);
-  
-      useEffect(() => {
-          getProducts().then(products => {
-              setProducts(products);
-          });
-      }, []);
 
-  const filteredProducts = category === "all"
-    ? products
-    : products.filter(product => product.category === category);
+  useEffect(() => {
+    getProducts().then(data => {
+      setProducts(data);
+    });
+  }, []);
+
+  const filteredProducts =
+    category === "all"
+      ? products
+      : products.filter(product => product.category === category);
+
   return (
     <div className="products-page">
       <div className="filters">
@@ -26,11 +28,19 @@ const Products = () => {
           <option value="juguetes">Juguetes</option>
         </select>
       </div>
-      <div className="products-grid">
-        {filteredProducts.map(product => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
+
+      {filteredProducts.length === 0 ? (
+        <div className="no-products">
+          <h2>No hay productos disponibles</h2>
+          <p>Prueba seleccionando otra categoría 😉</p>
+        </div>
+      ) : (
+        <div className="products-grid">
+          {filteredProducts.map(product => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
